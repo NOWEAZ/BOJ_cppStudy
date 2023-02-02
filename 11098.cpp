@@ -1,6 +1,7 @@
 //11098번
 #include <iostream>
 using namespace std;
+
 int main() {
 
 	int n, p;

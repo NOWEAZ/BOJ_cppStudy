@@ -1,6 +1,7 @@
 //1977번
 #include <iostream>
 using namespace std;
+
 int main() {
     int small = 10001, M,N, sum = 0, cnt=0;
     cin >> M >> N;
