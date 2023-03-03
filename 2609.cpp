@@ -1,29 +1,19 @@
 //2609번
 #include <iostream>
 using namespace std;
-int main() {
-    int a, b, i = 1;
-    int GCD = 1, LCM = 1;
-    cin >> a >> b;
-
-    if (a != 1 && b != 1){
-        if(i == 1)
-            i++;
-        while(i < a && i < b){
-            if(a % i == 0 && b % i == 0){
-                GCD *= i; 
-                a = a / i; b = b / i;
-                LCM = GCD * a * b;
-            }
-            else if(a % i > 0 || b % i >0) 
-                i++;
-        }
+int GCD(int a, int b){
+    int c = a % b;
+    while(c != 0){
+        a = b;  b = c;  c = a % b;
     }
-    else{
-        GCD = 1;
-        LCM = a * b;
-    }
-    cout << GCD << endl << LCM << endl;
-    return 0;
+    return b;
 }
-//서로수인 경우에 어떻게 판별할지
+int LCM(int a, int b){
+    return (a * b) / GCD(a, b);
+}
+int main() {
+    int a, b;
+    cin >> a >> b;
+    cout << GCD(a, b) << endl << LCM(a, b);
+    return 0;
+    }
