@@ -1,25 +1,19 @@
 //10984번
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
-    int T; cin >> T;
-    int N; int C; float G;
-    int count = 0, totalC = 0;
-    float totalG = 0;
-    vector <int> vC;
-    vector <float> vG;
-    while (1){
+    int T, N, C;
+    float totalC, totalG, GPA, G;
+    cin >> T;
+    for(int i = 0; i < T; i++){
         cin >> N;
-        for(int i = 0; i <= N; i++){
-            cin >> C; cin >> G;
-            totalC += C; totalG += G;
-            vC.push_back(totalC);
-            vG.push_back(totalG / (float)N);
+        for(int j = 0; j < N; j++){
+            cin >> C;   cin >> G;
+            totalC += C;    totalG += ((float)C * G);
         }
-        count ++;
-        if(count > T)
-            break;
-    }
+        cout.precision(2);
+        cout << totalC << " " << totalG / totalC << endl;
+        totalC = 0; totalG = 0;
+        }
     return 0;
-}
+} 
