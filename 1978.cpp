@@ -1,14 +1,18 @@
 //1978번
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
-    int N, num, a; cin >> N;
-    vector <int> arr;
+    int N, num, a = 0, result = 0; cin >> N;
     for(int i = 0; i < N; i++){
         cin >> num;
-        arr.push_back(num);
+        for(int j = 1; j <= num; j++){
+            if(num % j == 0)
+                a++;
+        }
+        if(a == 2)
+            result++;
+        a = 0;
     }
-    for(int j = 0; j < num; j++)
+    cout << result << endl;
     return 0;
 }
