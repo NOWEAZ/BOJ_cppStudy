@@ -3,7 +3,8 @@
         "utility": "cpp",
         "string": "cpp",
         "iostream": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "ostream": "cpp"
     },
     "cmake.configureOnOpen": false
 }
