@@ -1,15 +1,17 @@
 //3052번
 #include <iostream>
-#include <vector>
 using namespace std;
 int main(){
-    int n;
-    vector<int> v;
+    int n, index, count = 0, arr[42] = {0};
     for(int i = 0; i < 10; i++){
         cin >> n;
-        int index = n % 42;
-        v[index]++;
+        index = n % 42;
+        arr[index]++;
     }
-    cout << v.size() << endl;
+    for(int i = 0; i < 42; i++){
+        if(arr[i] != 0)
+            count++;
+    }
+    cout << count << endl;
     return 0;
 }
